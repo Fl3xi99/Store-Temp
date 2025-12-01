@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
-  <body style="background-image:  url(images/67e5010192b25496c5faf55a_3DPrinterOS_Jan_Blog3_The-Future-of-Remote-3D-Printing-Innovations-to-Look-Out-For.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;">
+  <body style="background-image: url('../images/image.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;background-attachment: fixed; ">
     <main>
       <nav class="navbar">
         <div class="nav-inner">
@@ -65,6 +62,28 @@
           navMenuMobile.classList.toggle("open");
         });
       </script>
+
+      <script>
+  const tabLogin = document.getElementById("tab-login");
+  const tabRegister = document.getElementById("tab-register");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
+
+  tabLogin.addEventListener("click", () => {
+    tabLogin.classList.add("active");
+    tabRegister.classList.remove("active");
+    loginForm.style.display = "block";
+    registerForm.style.display = "none";
+  });
+
+  tabRegister.addEventListener("click", () => {
+    tabRegister.classList.add("active");
+    tabLogin.classList.remove("active");
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+  });
+</script>
+
     </main>
     <script src="index.js"></script>
   </body>

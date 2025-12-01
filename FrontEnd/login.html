@@ -44,12 +44,33 @@
       </div>
     </div>
   </nav>
-  <main class="hero" id="home">
-    <h1>Custom 3D prints</h1>
-    <p>
-        Custom Made 3D prints for u
-    </p>
-  </main>
+  <section class="auth-container" style="max-width:400px;margin:120px auto;padding:20px;border-radius:12px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);color:white;text-align:center;">
+  
+  <div class="auth-tabs">
+    <button id="tab-login" class="active">Login</button>
+    <button id="tab-register">Register</button>
+  </div>
+
+  <!-- LOGIN FORM -->
+  <div id="loginForm" class="auth-form">
+    <h2>Login</h2>
+    <input id="loginEmail" type="email" placeholder="Email" required><br>
+    <input id="loginPassword" type="password" placeholder="Password" required><br>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- REGISTER FORM -->
+  <div id="registerForm" class="auth-form" style="display:none;">
+    <h2>Create Account</h2>
+    <input id="registerEmail" type="email" placeholder="Email" required><br>
+    <input id="registerPassword" type="password" placeholder="Password" required><br>
+    <button onclick="register()">Sign Up</button>
+  </div>
+
+</section>
+
+<script type="module" src="./js/auth.js"></script>
+
 
   <script>
     const navToggle = document.getElementById("navToggle");
@@ -61,7 +82,8 @@
     });
   </script> 
 
-  <script>
+
+<script>
   const tabLogin = document.getElementById("tab-login");
   const tabRegister = document.getElementById("tab-register");
   const loginForm = document.getElementById("loginForm");
