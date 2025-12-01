@@ -8,103 +8,110 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
+
   <body style="background-image: url('../images/image.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;background-attachment: fixed; ">
     <main>
-        <nav class="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <div class="nav-logo-badge">NV</div>
-        <span>Custom 3D Prints</span>
-      </a>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="collection.html">Collection</a></li>
-        <li><a href="#pricing">Contact</a></li>
-        <li><a href="#docs">About</a></li>
-      </ul>
+      <nav class="navbar">
+        <div class="nav-inner">
+          <a href="#" class="nav-logo">
+            <div class="nav-logo-badge">NV</div>
+            <span>Custom 3D Prints</span>
+          </a>
 
-      <button class="nav-cta">Sign Up</button>
+          <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="#pricing">Contact</a></li>
+            <li><a href="#docs">About</a></li>
+          </ul>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <div class="nav-menu-mobile" id="navMenuMobile">
-      <div class="nav-menu-inner">
-        <ul class="nav-links-mobile">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="collection.html">Collection</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#docs">Docs</a></li>
-        </ul>
-        <button class="nav-cta-mobile">Sign Up</button>
-      </div>
-    </div>
-  </nav>
-  <section class="auth-container" style="max-width:400px;margin:120px auto;padding:20px;border-radius:12px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);color:white;text-align:center;">
-  
-  <div class="auth-tabs">
-    <button id="tab-login" class="active">Login</button>
-    <button id="tab-register">Register</button>
-  </div>
+          <button class="nav-cta"onclick="window.location.href='login.html'">Sign Up</button>
 
-  <!-- LOGIN FORM -->
-  <div id="loginForm" class="auth-form">
-    <h2>Login</h2>
-    <input id="loginEmail" type="email" placeholder="Email" required><br>
-    <input id="loginPassword" type="password" placeholder="Password" required><br>
-    <button onclick="login()">Login</button>
-  </div>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
 
-  <!-- REGISTER FORM -->
-  <div id="registerForm" class="auth-form" style="display:none;">
-    <h2>Create Account</h2>
-    <input id="registerEmail" type="email" placeholder="Email" required><br>
-    <input id="registerPassword" type="password" placeholder="Password" required><br>
-    <button onclick="register()">Sign Up</button>
-  </div>
+        <div class="nav-menu-mobile" id="navMenuMobile">
+          <div class="nav-menu-inner">
+            <ul class="nav-links-mobile">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="collection.html">Collection</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#docs">Docs</a></li>
+            </ul>
+            <button class="nav-cta-mobile"onclick="window.location.href='login.html'">Sign Up</button>
+          </div>
+        </div>
+      </nav>
 
-</section>
+      <section class="auth-container" style="max-width:400px;margin:120px auto;padding:20px;border-radius:12px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);color:white;text-align:center;">
+        
+        <div class="auth-tabs">
+          <button id="tab-login" class="active">Login</button>
+          <button id="tab-register">Register</button>
+        </div>
 
-<script type="module" src="./js/auth.js"></script>
+        <!-- LOGIN FORM -->
+        <div id="loginForm" class="auth-form">
+          <h2>Login</h2>
+          <input id="loginEmail" type="email" placeholder="Email" required><br>
+          <input id="loginPassword" type="password" placeholder="Password" required><br>
+          <button onclick="login()">Login</button>
+        </div>
 
+        <!-- REGISTER FORM -->
+        <div id="registerForm" class="auth-form" style="display:none;">
+          <h2>Create Account</h2>
+          <input id="registerEmail" type="email" placeholder="Email" required><br>
+          <input id="registerPassword" type="password" placeholder="Password" required><br>
+          <button onclick="register()">Sign Up</button>
+        </div>
 
-  <script>
-    const navToggle = document.getElementById("navToggle");
-    const navMenuMobile = document.getElementById("navMenuMobile");
+      </section>
 
-    navToggle.addEventListener("click", () => {
-      navToggle.classList.toggle("active");
-      navMenuMobile.classList.toggle("open");
-    });
-  </script> 
+      <script type="module" src="./js/auth.js"></script>
 
+      <!-- NAV MOBILE SCRIPT | SAFE CHECK ADDED -->
+      <script>
+        const navToggle = document.getElementById("navToggle");
+        const navMenuMobile = document.getElementById("navMenuMobile");
 
-<script>
-  const tabLogin = document.getElementById("tab-login");
-  const tabRegister = document.getElementById("tab-register");
-  const loginForm = document.getElementById("loginForm");
-  const registerForm = document.getElementById("registerForm");
+        if (navToggle && navMenuMobile) {
+          navToggle.addEventListener("click", () => {
+            navToggle.classList.toggle("active");
+            navMenuMobile.classList.toggle("open");
+          });
+        }
+      </script>
 
-  tabLogin.addEventListener("click", () => {
-    tabLogin.classList.add("active");
-    tabRegister.classList.remove("active");
-    loginForm.style.display = "block";
-    registerForm.style.display = "none";
-  });
+      <!-- LOGIN/REGISTER TAB SCRIPT | SAFE CHECK ADDED -->
+      <script>
+        const tabLogin = document.getElementById("tab-login");
+        const tabRegister = document.getElementById("tab-register");
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
 
-  tabRegister.addEventListener("click", () => {
-    tabRegister.classList.add("active");
-    tabLogin.classList.remove("active");
-    loginForm.style.display = "none";
-    registerForm.style.display = "block";
-  });
-</script>
+        if (tabLogin && tabRegister && loginForm && registerForm) {
+          tabLogin.addEventListener("click", () => {
+            tabLogin.classList.add("active");
+            tabRegister.classList.remove("active");
+            loginForm.style.display = "block";
+            registerForm.style.display = "none";
+          });
+
+          tabRegister.addEventListener("click", () => {
+            tabRegister.classList.add("active");
+            tabLogin.classList.remove("active");
+            loginForm.style.display = "none";
+            registerForm.style.display = "block";
+          });
+        }
+      </script>
 
     </main>
+
     <script src="index.js"></script>
   </body>
 </html>
