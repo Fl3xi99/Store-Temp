@@ -5,95 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
-    <link rel="stylesheet" href="FrontEnd/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body style="background-image: url('../images/image.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;background-attachment: fixed; ">
     <main>
-      <nav class="navbar">
-        <div class="nav-inner">
-          <a href="#" class="nav-logo">
-            <div class="nav-logo-badge">NV</div>
-            <span>Custom 3D Prints</span>
-          </a>
+        <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-badge">NV</div>
+        <span>Custom 3D Prints</span>
+      </a>
 
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="FrontEnd/collection.html">Collection</a></li>
-            <li><a href="#pricing">Contact</a></li>
-            <li><a href="#docs">About</a></li>
-          </ul>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Collection</a></li>
+        <li><a href="#pricing">Contact</a></li>
+        <li><a href="#docs">About</a></li>
+      </ul>
 
-          <button class="nav-cta"onclick="window.location.href='FrontEnd/login.html'">Sign Up</button>
+      <button class="nav-cta">Sign Up</button>
 
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-menu-mobile" id="navMenuMobile">
+      <div class="nav-menu-inner">
+        <ul class="nav-links-mobile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#docs">Docs</a></li>
+        </ul>
+        <button class="nav-cta-mobile">Sign Up</button>
+      </div>
+    </div>
+  </nav>
+  <main class="hero" id="home">
+    <h1>Custom 3D prints</h1>
+    <p>
+        Custom Made 3D prints for u
+    </p>
+  </main>
 
-        <div class="nav-menu-mobile" id="navMenuMobile">
-          <div class="nav-menu-inner">
-            <ul class="nav-links-mobile">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="FrontEnd/collection.html">Collection</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#docs">Docs</a></li>
-            </ul>
-            <button class="nav-cta-mobile"onclick="window.location.href='FrontEnd/login.html'">Sign Up</button>
-          </div>
-        </div>
-      </nav>
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navMenuMobile = document.getElementById("navMenuMobile");
 
-      <main class="hero" id="home">
-        <h1>Custom 3D prints</h1>
-        <p>
-          Custom Made 3D prints for u
-        </p>
-      </main>
+    navToggle.addEventListener("click", () => {
+      navToggle.classList.toggle("active");
+      navMenuMobile.classList.toggle("open");
+    });
+  </script> 
 
-      <!-- MOBILE NAVBAR SCRIPT (unchanged) -->
-      <script>
-        const navToggle = document.getElementById("navToggle");
-        const navMenuMobile = document.getElementById("navMenuMobile");
+  <script>
+  const tabLogin = document.getElementById("tab-login");
+  const tabRegister = document.getElementById("tab-register");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
 
-        if (navToggle && navMenuMobile) {
-          navToggle.addEventListener("click", () => {
-            navToggle.classList.toggle("active");
-            navMenuMobile.classList.toggle("open");
-          });
-        }
-      </script>
+  tabLogin.addEventListener("click", () => {
+    tabLogin.classList.add("active");
+    tabRegister.classList.remove("active");
+    loginForm.style.display = "block";
+    registerForm.style.display = "none";
+  });
 
-      <!-- FIXED SCRIPT: Prevents tab errors -->
-      <script>
-        const tabLogin = document.getElementById("tab-login");
-        const tabRegister = document.getElementById("tab-register");
-        const loginForm = document.getElementById("loginForm");
-        const registerForm = document.getElementById("registerForm");
-
-        if (tabLogin && tabRegister && loginForm && registerForm) {
-
-          tabLogin.addEventListener("click", () => {
-            tabLogin.classList.add("active");
-            tabRegister.classList.remove("active");
-            loginForm.style.display = "block";
-            registerForm.style.display = "none";
-          });
-
-          tabRegister.addEventListener("click", () => {
-            tabRegister.classList.add("active");
-            tabLogin.classList.remove("active");
-            loginForm.style.display = "none";
-            registerForm.style.display = "block";
-          });
-
-        }
-      </script>
+  tabRegister.addEventListener("click", () => {
+    tabRegister.classList.add("active");
+    tabLogin.classList.remove("active");
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+  });
+</script>
 
     </main>
-
     <script src="index.js"></script>
   </body>
 </html>
